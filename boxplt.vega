@@ -1,16 +1,16 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A horizontal box plot showing median and lower and upper quartiles of the distribution of body mass of penguins.",
-    "data": {"url": "fat_clean.csv"},
+    "data": {"url": "new_fin.csv"},
     "mark": "boxplot",
     "encoding": {
-      "y": {"field": "Age Group  ", "type": "nominal"},
+      "y": {"field": "Age Group", "type": "nominal"},
       "x": {
-        "field": "Body Mass (g)",
+        "field": "Speed Limit_x",
         "type": "quantitative",
         "scale": {"zero": false}
       },
-      "size": {"value": 10},
+      "size": {"value": 6},
       "color": {"value": "teal"}
     }
   }
