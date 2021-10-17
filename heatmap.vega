@@ -6,7 +6,6 @@
         "url": "final_clean.csv"
     },
     "title": "Casualties on different days of the week",
-    "mark": "rect",
     "encoding": {
         "y": {
             "field": "State",
@@ -16,21 +15,45 @@
         "x": {
             "field": "Dayweek",
             "type": "nominal",
-            "title": "Dayweek"
-        },
-        "color": {
-            "field": "Number Fatalities",
-            "aggregate": "sum",
-            "type": "quantitative",
-            "scale": {
-                "type": "threshold",
-                "domain": [0,500, 1000,1500,2000,2500,3000,3500,4000,4500],
-                "range": ["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c","#cb181d","#a50f15","#67000d"]
-             }
+            "title": "Dayweek",
+            "axis": {
+                "labelAngle": 0
+              }
         }
-        
-        
+    
+         
     },
+    "layer": [
+        {
+            "mark":"rect",
+            "encoding": {
+                    "color": {
+                        "field": "Number Fatalities",
+                        "aggregate": "sum",
+                        "type": "quantitative",
+                        "scale": {
+                            "type": "threshold",
+                            "domain": [0,500, 1000,1500,2000,2500,3000,3500,4000,4500],
+                            "range": ["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c","#cb181d","#a50f15","#67000d"]
+                         }
+                        }
+            }
+        },
+        {
+            "mark": "text",
+            "encoding": {
+              "text": {"field": "Number Fatalities",
+                "aggregate": "sum",
+                "type": "quantitative"},
+            "color": {
+                    "condition": {"test": "datum['sum_Number Fatalities'] < 2000", "value": "black"},
+                    "value": "white"
+                  }
+              }
+        }
+
+    ],
+    
     "config": {
         "axis": {"grid": true, "tickBand": "extent"}
       }

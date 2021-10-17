@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "height": 300,
-    "title": "Sum of road fatalities over theyear for different   speed",
+    "title": "Sum of road fatalities over the year for different speed range",
     "data": {"url": "final_clean.csv"},
     "params": [
         {
@@ -22,18 +22,18 @@
     "mark": "area",
     "encoding": {
       "x": {
-        "field":"Year"
+        "field":"Year",
+        "axis": {
+          "labelAngle": -60
+        }
       },
       "y": {
         "aggregate": "sum", "field": "Number Fatalities"
       },
-      "color": {
-        "field": "Speed Limit",
-        "scale": {"scheme": "category20b"}
-      }
+      "color": {"field": "Speed Group", "scale": {"range": ["#ff6361", "#1f78b4","#003f5c","#fb9a99","#a6cee3"]}}
       ,
       "tooltip": [
-        {"field": "Speed Limit", "type": "ordinal", "title": "Speed Limit"},
+        {"field": "Speed Group", "type": "ordinal", "title": "Speed Group"},
         {"aggregate": "sum", "field": "Number Fatalities"}
     ]
     }
