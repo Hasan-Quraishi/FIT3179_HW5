@@ -39,7 +39,7 @@
     },
     "config": {
          "background":"#FFFDD0",
-         "legend": {"labelFontSize":18}
+         "legend": {"labelFontSize":18,"titleFontSize":16}
     }
     
   }
