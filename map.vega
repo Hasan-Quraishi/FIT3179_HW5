@@ -1,8 +1,8 @@
 {
  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
- "width": 500,
- "height": 300,
- "title": "Total number of road casualties at different states",
+ "width": "container",
+ "height": 500,
+ "title": {"text":"Total number of road casualties at different states","fontSize":20},
  "projection": {"type": "equirectangular"},
  "layer":[ 
      {"data": {
@@ -43,7 +43,11 @@
        }
     }
     
-    ]
+    ],
+    "config": {
+           "background":"#FFFDD0",
+           "legend": {"labelFontSize":16,"titleFontSize":16}
+    }
  
     
 }
