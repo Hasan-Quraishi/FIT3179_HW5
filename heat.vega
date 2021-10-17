@@ -1,7 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 300, "height": 200,
-    "title": "Sum of road fatalities over theyear for different speed",
+    "width": 500,
+    "height": 300,
+    "title": "Sum of road fatalities over theyear for different   speed",
     "data": {"url": "final_clean.csv"},
     "params": [
         {

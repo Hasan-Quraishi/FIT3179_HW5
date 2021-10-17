@@ -1,0 +1,12 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "A bar chart showing the number of casualties over years for male and female",
+    "data": {"url": "final_clean.csv"},
+    "width": {"step": 17},
+    "mark": "bar",
+    "encoding": {
+      "y": {"aggregate": "sum", "field": "Number Fatalities", "title": "Casualties"},
+      "x": {"field": "Year"},
+      "color": {"field": "Gender", "scale": {"range": ["#675193", "#ca8861"]}}
+    }
+  }
