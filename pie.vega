@@ -1,0 +1,20 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "description": "A horizontal box plot showing median, min, and max body mass of penguins.",
+    "data": {"url": "final_clean.csv"},
+    "encoding": {
+      "theta": {"aggregate":"sum","field": "Number Fatalities","stack":true},
+      "color": {"field": "Day_Time", "type": "nominal","legend":null}
+    },
+    "layer": [{
+        "mark": {"type": "arc", "outerRadius": 80}
+      }, {
+        "mark": {"type": "text", "radius": 130},
+        "encoding": {
+          "text": {"field": "Day_Time", "type": "nominal"}
+        }
+      }]
+    
+  }
