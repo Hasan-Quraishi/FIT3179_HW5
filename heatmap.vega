@@ -5,7 +5,34 @@
     "data": {
         "url": "final_clean.csv"
     },
-    "title": {"text":"Casualties on different days of the week","fontSize":20},
+    "title": {"text":{"expr":"'Casualties on different days of the week from '+Start_Year+' to '+ End_Year"},"fontSize":20},
+    "params": [
+        {
+        "name": "Start_Year",
+        "value": 1989,
+        "bind": {
+        "name": "Start Year: ",
+        "input": "range",
+        "min": 1989,
+        "max": 2020,
+        "step": 1
+        }
+        },{
+            "name": "End_Year",
+            "value": 2020,
+            "bind": {
+            "name": "End Year: ",
+            "input": "range",
+            "min": 1989,
+            "max": 2020,
+            "step": -1
+            }
+            }],
+        "transform": [
+            {"filter": "datum.Year>Start_Year"},
+            {"filter": "datum.Year<End_Year"}
+            
+            ],
     "encoding": {
         "y": {
             "field": "State",

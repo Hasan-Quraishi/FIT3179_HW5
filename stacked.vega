@@ -4,6 +4,23 @@
     "data": {"url": "final_clean.csv"},
     "width": {"step": 17},
     "mark": "bar",
+    "params": [
+      {
+      "name": "Start_Year",
+      "value": 0,
+      "bind": {
+      "name": "Start Year: ",
+      "input": "range",
+      "min": 1989,
+      "max": 2020,
+      "step": 1
+      }
+      }],
+      "transform": [
+          {"filter": "datum.Year> Start_Year"}
+          
+          ],
+
     "encoding": {
       "y": {"aggregate": "sum", "field": "Number Fatalities", "title": "Casualties","axis": {"grid": false, "tickBand": "extent",
         "titleFontSize":18,
